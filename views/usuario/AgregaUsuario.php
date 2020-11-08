@@ -1,3 +1,4 @@
+
 ﻿<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,11 +32,21 @@
 	
   </head>
 <body>
-
+   <?php
+session_start();
+if(isset($_SESSION["carrito"]))
+{
+    $carrito=$_SESSION["carrito"];
+}
+else
+{
+    $carrito=array();
+}
+?> 
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
-	<div class="span6">Bienvenido!<strong> User</strong></div>
+	<div class="span6">Bienvenido!<strong> Usuario</strong></div>
 	<div class="span6">
 	</div>
 </div>
@@ -59,8 +70,9 @@
 	<div class="container">
 	<div class="row">
 <!-- Sidebar ================================================== -->	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> 22 Productos en Carrito</a></div>
+		<div class="well well-small"><a id="myCart" ><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> <?=count($carrito)?> Productos en Carrito</a></div>
 		<ul id="sideManu" class="nav nav-tabs nav-stacked">
+			<div class="well well-small" >MANTENIMIENTO</div>
                    <li class="subMenu"><a>Libro</a>
 				<ul>
 				
@@ -79,8 +91,9 @@
 				
 				</ul>
 			</li>
+                        
 			<li class="subMenu"><a> Reportes </a>
-				<ul style="display:none">
+			<ul style="display:none">
 				<li><a href="index.php?c=cliente&a=ReportesdeUsuarios"><i class="icon-chevron-right"></i>Usuario</a></li>
 				<li><a href="index.php?c=libro&a=ReportesLibros"><i class="icon-chevron-right"></i>Libro</a></li>												
 												
@@ -99,102 +112,117 @@
 <div class="span9">
     <ul class="breadcrumb">
 		<li><a>Home</a> <span class="divider">/</span></li>
-		<li class="active">Actualizacion de Usuario</li>
+		<li class="active">Registro de Cliente</li>
     </ul>
-             <?php
+ 
   
-    foreach ($data["clientes"] as $dato)
-    {?>	
+ 
 
-            <form class="form-horizontal" action="index.php?c=cliente&a=actualizausuario" method="POST"  >
+    <form  name="nuevo" id="nuevo" class="form-horizontal" action="index.php?c=cliente&a=guardarclientexAdmin" method="POST" enctype="multipart/form-data" >
              
-		<h4>Datos del Usuario aquí</h4>
+		<h4>Ingrese datos del Cliente </h4>
 			<div class="control-group">
-			<label class="control-label" for="inputFname1">Cuenta <sup>*</sup></label>
+			<label class="control-label" for="inputFname1">DNI de Cliente<sup>*</sup></label>
 			<div class="controls">
-                            <input readonly="" type="text" id="cuenta" name="cuenta" value="<?=$dato["cuenta"]?>" >
+                            <input type="text" id="cuenta" name="cuenta" placeholder="DNI" >
 			</div>
 		 </div>
 		<div class="control-group">
 			<label class="control-label" for="inputFname1">Contraseña <sup>*</sup></label>
 			<div class="controls">
-                            <input type="text" name="contraseña" id="contraseña" value="<?=$dato["contraseña"]?>">
+                         <input type="text" id="contraseña" name="contraseña" placeholder="Contraseña" >
 			</div>
 		 </div>
 
 		 <div class="control-group">
 			<label class="control-label" for="inputLnam">Apellidos<sup>*</sup></label>
 			<div class="controls">
-                            <input type="text" id="apellidos" name="apellidos" value="<?=$dato["apellidos"]?>">
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" >
 			</div>
 		 </div>
-		<div class="control-group">
-		<label class="control-label" for="input_email">Nombres<sup>*</sup></label>
+                <div class="control-group">
+		<label class="control-label">Nombres<sup>*</sup></label>
 		<div class="controls">
-                    <input type="text" id="nombres"  name="nombres" value="<?=$dato["nombres"]?>">
-                </div>
+                    <input type="text" id="precio" name="nombres" placeholder="Nombres">
+			</div>
 	  </div>
-                	<div class="control-group">
+		<div class="control-group">
 		<label class="control-label" for="input_email">Direccion<sup>*</sup></label>
 		<div class="controls">
-                    <input type="text" id="direccion"  name="direccion" value="<?=$dato["direccion"]?>">
+                    <input type="text" id="direccion"  name="direccion" placeholder="Direccion">
 		</div>
 	  </div>
-
-		<div class="control-group">
-		<label class="control-label">Localidad<sup>*</sup></label>
+                	
+                
+                	<div class="control-group">
+		<label class="control-label" for="input_email">Localidad<sup>*</sup></label>
 		<div class="controls">
-        <input type="text" id="localidad"  name="localidad" value="<?=$dato["localidad"]?>">
-
-		</div>
+                    <input type="text" id="localidad" name="localidad" placeholder="Localidad">
+			</div>
 	  </div>
+ 
+                    <div class="control-group">
+		<label class="control-label" for="input_email">Codigo Postal<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="cpostal" name="cpostal" placeholder="Ejem: 02145">
+			</div>
+	  </div>
+                                	<div class="control-group">
+		<label class="control-label" for="input_email">Telefono<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="telefono" name="telefono" placeholder="968651128">
+			</div>
+	  </div>
+                    <div class="control-group">
+		<label class="control-label" for="input_email">Correo<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="correo" name="correo" placeholder="Ejm: josecarlos@gmail.com">
+			</div>
+	  </div>
+                    <div class="control-group">
+		<label class="control-label" for="input_email">Tipo de Tarjeta<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="tipot" name="tipot" placeholder="Ejm: VISA,MASTERCARD">
+			</div>
+	  </div>
+                   <div class="control-group">
+		<label class="control-label" for="input_email">Nro. Tarjeta<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="numt" name="numt" placeholder="Ejm: 4234567891234567">
+			</div>
+	  </div>
+           <div class="control-group">
+		<label class="control-label" for="input_email">Fecha de Vencimiento<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="fven" name="fven" placeholder="Ejm: 02/21">
+	</div>
+	  </div>
+            <div class="control-group">
+		<label class="control-label" for="input_email">Codigo CVV<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="cvv" name="cvv" placeholder="Ejm: 680">
+			</div>
+	  </div>    
 	
-                <div class="control-group">
-		<label class="control-label">Codigo Postal<sup>*</sup></label>
-		<div class="controls">
-  <input type="text" id="cpostal"  name="cpostal" value="<?=$dato["cpostal"]?>">
-
-		</div>
-	  </div>
-          <div class="control-group">
-		<label class="control-label">Telefono<sup>*</sup></label>
-		<div class="controls">
-  <input type="text" id="telefono"  name="telefono" value="<?=$dato["telefono"]?>">
-
-		</div>
-	  </div>
-        <div class="control-group">
-		<label class="control-label">Correo<sup>*</sup></label>
-		<div class="controls">
-  <input type="text" id="correo"  name="correo" value="<?=$dato["correo"]?>">
-
-		</div>
-	  </div>
+	
                 <div><br></div>
 	<div class="alert alert-block alert-error fade in">
 		<button type="button" class="close" data-dismiss="alert">×</button>
-		<strong>PetroMark</strong> es simplemente una filial de PetroPeru ubicado en diferentes punto del Pais , ofreciendo un buen servicio a sus clientes y proveedores
-	 </div>	
+		<strong>Millenium S.A.C</strong> Elige y compra los mejores libros del mercado en nuestra tienda virtual. Nos ubicamos en la AV. PERÚ 3124 en San Martin de Porres. !AHORA O NUNCA!  
 	
+                
 	<div class="control-group">
 			<div class="controls">
 				<input type="hidden" name="email_create" value="1">
 				<input type="hidden" name="is_new_customer" value="1">
-                                 <button  type="submit" name="guardar" class="btn btn-large btn-success">Actualizar</button>
-                                 <button margin:10px type="#" name="cancelar" class="btn btn-large btn-success">Cancelar</button>
-                              
-			</div>
-           
+                                 <button  type="submit" name="guardar" class="btn btn-large btn-success">Registrar</button>
+                                 <button margin:10px type="" name="cancelar" class="btn btn-large btn-success">Cancelar</button>              
+			</div>          
         </div>
+                </div>
                  </form>
-                <?php
-    }
-                
-                ?>
-           
           
-           
-        </div>
+  
    
       
        <!--FINAL DEL FORM--->

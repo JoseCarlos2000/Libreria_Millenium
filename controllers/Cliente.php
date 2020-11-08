@@ -12,12 +12,22 @@ class ClienteController {
          require_once "models/libroModel.php";
     }
 
-        		public function Login(){
+    
+            public function Principal(){
+                $libro = new libroModel();
+                $data["libros"]=$libro->get_libros();
+                require_once 'views/usuario/Principal.php';
+                 }
+        	public function Login(){
                             require_once "views/usuario/Login.php";	
 		}
                 		
                 public function nuevousuario(){
-			require_once "views/usuario/AgregarUsuario.php";
+			require_once "views/AgregarUsuario.php";
+                        
+		}
+                public function nuevousuarioxAdmin(){
+			require_once "views/usuario/AgregaUsuario.php";
                         
 		}
 
@@ -73,6 +83,26 @@ class ClienteController {
 			$usuario->insertartarjeta($tp, $numt, $fven, $cod, $cuenta);
 			$this->Login();
 		}
+                public function guardarclientexAdmin()
+                {
+                    			$cuenta = $_POST['cuenta'];
+			$pas = $_POST['contraseña'];
+			$ape = $_POST['apellidos'];
+			$nom = $_POST['nombres'];
+			$dire = $_POST['direccion'];
+                        $local = $_POST['localidad'];
+			$cp = $_POST['cpostal'];
+                        $tel = $_POST['telefono'];
+			$cor = $_POST['correo'];
+			$tp=$_POST['tipot'];
+                        $numt=$_POST['numt'];
+                        $fven=$_POST['fven'];
+                        $cod=$_POST['cvv'];
+			$usuario = new clienteModel();
+			$usuario->insertarusuario($cuenta, $pas, $ape, $nom, $dire, $local, $cp, $tel, $cor);
+			$usuario->insertartarjeta($tp, $numt, $fven, $cod, $cuenta);
+			$this->buscarusuario();
+                }
                     public function validausuario(){
 			
 			
@@ -94,6 +124,7 @@ class ClienteController {
                             
                         }
 		}
+                
     		public function index(){
 			
 			
@@ -114,6 +145,13 @@ class ClienteController {
 			
 			require_once "views/usuario/BuscarUsuario.php";	
 		}
+                
+                public function ReportesdeUsuarios()
+                {
+                    $cliente=new clienteModel();
+                    $data["clientes"]=$cliente->get_clientes();
+                    require_once 'Reportes/Reportes_de_clientes.php';
+                }
                 
                 
 }

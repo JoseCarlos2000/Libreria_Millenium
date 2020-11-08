@@ -11,6 +11,7 @@
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="css/MenuPrincipal/themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="css/MenuPrincipal/themes/css/base.css" rel="stylesheet" media="screen"/>
+    <script type="text/javascript" src="css/js/ajax.js"></script>
 <!-- Bootstrap style responsive -->	
 	<link href="css/MenuPrincipal/themes/css/bootstrap-responsive.min.css" rel="stylesheet"/>
 	<link href="css/MenuPrincipal/themes/css/font-awesome.css" rel="stylesheet" type="text/css">
@@ -25,7 +26,17 @@
 	<style type="text/css" id="enject"></style>
   </head>
 <body>
-    
+<?php
+session_start();
+if(isset($_SESSION["carrito"]))
+{
+    $carrito=$_SESSION["carrito"];
+}
+else
+{
+    $carrito=array();
+}
+?>
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
@@ -33,7 +44,7 @@
 	<div class="span6">
 	<div class="pull-right">
 		
-		<a href="#"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> 222 Productos en Carrito  </span> </a> 
+		<a><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> <?=count($carrito)?> Productos en Carrito  </span> </a> 
 	</div>
 	</div>
 </div>
@@ -45,12 +56,8 @@
 	<span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-      <a class="brand" href="#"><img src="css/MenuPrincipal/themes/images/logolib.png" width="193px" height="80px"/></a>
-		<form class="form-inline navbar-search" method="post" action="products.html" >
-		<input id="srchFld" class="srchTxt" type="text" />
-		  
-		 
-    </form>
+      <a class="brand"><img src="css/MenuPrincipal/themes/images/logolib.png" width="193px" height="80px"/></a>
+
     
   </div>
 </div>
@@ -62,55 +69,37 @@
 		<div class="carousel-inner">
 		  <div class="item active">
 		  <div class="container">
-                      <a href="#"><img style="width:100%" src="css/MenuPrincipal/themes/images/carousel/6.png" alt="special offers"/></a>
+                      <a href="index.php?c=libro&a=MPrincipal"><img style="width:100%" src="css/MenuPrincipal/themes/images/carousel/6.png" alt="special offers"/></a>
 			
 		  </div>
 		  </div>
 		  <div class="item">
 		  <div class="container">
-			<a href="#"><img style="width:100%" src="css/MenuPrincipal/themes/images/carousel/1.png" alt=""/></a>
-				<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
+			<a><img style="width:100%" src="css/MenuPrincipal/themes/images/carousel/1.png" alt=""/></a>
 		  </div>
 		  </div>
 		  <div class="item">
 		  <div class="container">
-			<a href="#"><img src="css/MenuPrincipal/themes/images/carousel/2.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
-			
+			<a><img src="css/MenuPrincipal/themes/images/carousel/2.png" alt=""/></a>			
 		  </div>
 		  </div>
 		   <div class="item">
 		   <div class="container">
-			<a href="#"><img src="css/MenuPrincipal/themes/images/carousel/3.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
+			<a><img src="css/MenuPrincipal/themes/images/carousel/3.png" alt=""/></a>
+
 		   
 		  </div>
 		  </div>
 		   <div class="item">
 		   <div class="container">
-			<a href="#"><img src="css/MenuPrincipal/themes/images/carousel/4.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-			</div>
+			<a><img src="css/MenuPrincipal/themes/images/carousel/4.png" alt=""/></a>
+
 		  </div>
 		  </div>
 		   <div class="item">
 		   <div class="container">
-			<a href="#"><img src="css/MenuPrincipal/themes/images/carousel/5.png" alt=""/></a>
-			<div class="carousel-caption">
-				  <h4>Second Thumbnail label</h4>
-				  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-				</div>
+			<a><img src="css/MenuPrincipal/themes/images/carousel/5.png" alt=""/></a>
+
 		  </div>
 		  </div>
 		</div>
@@ -123,7 +112,7 @@
 	<div class="row">
 <!-- Sidebar ================================================== -->
 	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart" href="#"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> 22 Productos en Carrito</a></div>
+		<div class="well well-small"><a id="myCart"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"><?=count($carrito)?> Productos en Carrito</a></div>
 		<ul id="sideManu" class="nav nav-tabs nav-stacked">
 			<li class="subMenu open"><a>Mantenimientos</a>
 				<ul>
@@ -135,8 +124,8 @@
 			</li>
 			<li class="subMenu"><a> Reportes </a>
 			<ul style="display:none">
-				<li><a href="index.php?c=cliente&a=buscarusuario"><i class="icon-chevron-right"></i>Usuario</a></li>
-				<li><a href=href="index.php?c=libro&a=BuscarLibro"><i class="icon-chevron-right"></i>Libro</a></li>												
+				<li><a href="index.php?c=cliente&a=ReportesdeUsuarios"><i class="icon-chevron-right"></i>Usuario</a></li>
+				<li><a href="index.php?c=libro&a=ReportesLibros"><i class="icon-chevron-right"></i>Libro</a></li>												
 												
 				
 			</li>
@@ -164,66 +153,41 @@
                                   ?> 
                               <li class="span3">
 				  <div class="thumbnail">
-                                      <?php
-                                      $validaimg=  substr($dato["codLibro"],2);
-                                      if($validaimg>10)
-                                      {
-                                      ?>
-                                       <a  href=""><img src="css/images/libros/Defecto.png"  height="160" width="160" alt="10"/></a>
+                 
+                                               <a  href=""><img src="css/images/libros/<?=$dato["img"]?>"  height="160" width="160" alt="10"/></a>
 					<div class="caption">
 					  <h5><?=$dato["nombre"]?></h5>
                                             <p> 
 						<?=$dato["nombreAutor"]?>
 					  </p>
+
                                       <?php
-                                      }
-                                      else{
-                                      ?>
-                                               <a  href=""><img src="css/images/libros/<?=$dato["codLibro"]?>.png"  height="160" width="160" alt="10"/></a>
-					<div class="caption">
-					  <h5><?=$dato["nombre"]?></h5>
-                                            <p> 
-						<?=$dato["nombreAutor"]?>
-					  </p>
-                                      <?php
-                                      }
                                       
-                                      ?>
+                                      
+                                     
                              
-					
-					 
-                              <h4 style="text-align:center"> <a class="btn" href="#">Agregar<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">S/.<?=$dato["precio"]?></a></h4>
+					 ?>
+                                          <h4 style="text-align:center"> <a class="btn" href="index.php?c=libro&a=BusqLibroxId&id=<?=$dato["codLibro"]?>">Agregar<i class="icon-shopping-cart"></i></a><a> </a><a  class="btn btn-primary btn-agregar-libro">S/.<?=$dato["precio"]?></a></h4>
 					</div>
+                                               
 				  </div>
 				</li>
-                                <?php
+					 <?php
                               }
-                                  
-                                ?>
-
-			  </ul>	
+                                         ?>
+            			  </ul>	
 
 		</div>
 </form>
+
 		</div>
 	</div>
 </div>
+
 <!-- Footer ================================================================== -->
 	<div  id="footerSection">
 	<div class="container">
-		<div class="row">
-			<div class="span3">
-				<h5>ACCOUNT</h5>
-				
-			 </div>
-			<div class="span3">
-				<h5>INFORMATION</h5>
-			
-			 </div>
-			
-			
-		 </div>
-		
+<center><h5><br>Millenium By UCSS 2020</h5></center>
 	</div><!-- Container End -->
 	</div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
@@ -237,11 +201,7 @@
 	<!-- Themes switcher section ============================================================================================= -->
 <div id="secectionBox">
 <link rel="stylesheet" href="css/MenuPrincipal/themes/switch/themeswitch.css" type="text/css" media="screen" />
-<script src="css/MenuPrincipal/themes/switch/theamswitcher.js" type="text/javascript" charset="utf-8"></script>
-	
-	</div>
-	
-
-<span id="themesBtn"></span>
+<script src="css/MenuPrincipal/themes/switch/theamswitcher.js" type="text/javascript" charset="utf-8"></script>	
+</div>
 </body>
 </html>

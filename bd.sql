@@ -1,4 +1,3 @@
-
 create database libreria;
 use libreria;
 
@@ -39,6 +38,8 @@ nombre varchar(50),
 resumen varchar(500),
 ISBN  varchar(13),
 precio decimal,
+img varchar(50),
+stock  int,
 CodAutor varchar(10)
 );
  
@@ -67,24 +68,24 @@ insert into autor (codAutor,nombreAutor,nacionalidad) values ('A008','Jane Auste
 insert into autor (codAutor,nombreAutor,nacionalidad) values ('A009','William Shakespeare', 'Ingles');
 insert into autor (codAutor,nombreAutor,nacionalidad) values ('A010','Ignacio Manuel Altamirano', 'Mexicano');
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L001','El Señor de las Moscas','cuenta la historia de un grupo de chicos británicos cuyo avión ha chocado en una isla desierta en el Océano Pacífico. Sin adultos, los chicos tienen que cuidarse y organizarse. Los chicos tienen entre seis y doce años ', '9780863815805', 5.00, 'A001');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L001','El Señor de las Moscas','cuenta la historia de un grupo de chicos británicos cuyo avión ha chocado en una isla desierta en el Océano Pacífico. Sin adultos, los chicos tienen que cuidarse y organizarse. Los chicos tienen entre seis y doce años ', '9780863815805', 5.00,'L001.png',20,'A001');
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L002',' El Esclavo','Un hombre despierta atrapado en un cuerpo en estado vegetativo, tras un terrible accidente que le ha dejado inmovilizado. Incomunicado, comienza una conversación interior que le llevará en un viaje de autorrealización que le provocará un nuevo conocimiento de su yo más profundo' , '9780862436803', 15.00, 'A002');
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L003','El Señor de los Anillos ', 'Frodo Bolsón es un hobbit al que su tío Bilbo hace portador del poderoso Anillo Único, capaz de otorgar un poder ilimitado al que la posea, con la finalidad de destruirlo. ', '9780863569782', 45.00, 'A003');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L002',' El Esclavo','Un hombre despierta atrapado en un cuerpo en estado vegetativo, tras un terrible accidente que le ha dejado inmovilizado. Incomunicado, comienza una conversación interior que le llevará en un viaje de autorrealización que le provocará un nuevo conocimiento de su yo más profundo' , '9780862436803', 15.00,'L002.png', 15,'A002');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L003','El Señor de los Anillos ', 'Frodo Bolsón es un hobbit al que su tío Bilbo hace portador del poderoso Anillo Único, capaz de otorgar un poder ilimitado al que la posea, con la finalidad de destruirlo. ', '9780863569782', 45.00,'L003.png',25, 'A003');
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L004','Don Quijote de la Mancha', 'El ingenioso hidalgo don Quijote de la Mancha narra las aventuras de Alonso Quijano, un hidalgo pobre que de tanto leer novelas de caballería acaba enloqueciendo y creyendo ser un caballero andante, nombrándose a sí mismo como don Quijote de la Mancha ', '9780862548742', 56.30, 'A004');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L004','Don Quijote de la Mancha', 'El ingenioso hidalgo don Quijote de la Mancha narra las aventuras de Alonso Quijano, un hidalgo pobre que de tanto leer novelas de caballería acaba enloqueciendo y creyendo ser un caballero andante, nombrándose a sí mismo como don Quijote de la Mancha ', '9780862548742', 56.30,'L004.png', 18,'A004');
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L005',' Entregame tu corazon ','William era el hombre perfecto, al menos lo era para su amiga y Kristine estaba convencida a hacer cualquier cosa con tal de que empiecen a salir pero ¿qué ocurriría si ella comienza a enamorarse de él, sa mujer estaba loca. De eso William estaba seguro pero, ¿por qué no podía quitársela de la cabeza? Él no creía en el amor, no quería enamorarse pero por mucho que lo intenta no puede quitarse esa oscura sensación, ese deseo irracional por ella y decide hacerle un trato ', '9780864514783', 8.00, 'A005');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L005',' Entregame tu corazon ','William era el hombre perfecto, al menos lo era para su amiga y Kristine estaba convencida a hacer cualquier cosa con tal de que empiecen a salir pero ¿qué ocurriría si ella comienza a enamorarse de él, sa mujer estaba loca. De eso William estaba seguro pero, ¿por qué no podía quitársela de la cabeza? Él no creía en el amor, no quería enamorarse pero por mucho que lo intenta no puede quitarse esa oscura sensación, ese deseo irracional por ella y decide hacerle un trato ', '9780864514783', 8.00,'L005.png', 19,'A005');
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L006','Harry Potter', 'El día de su cumpleaños, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Debe asistir a una famosa escuela de magia y hechicería, donde entabla una amistad con dos jóvenes que se convertirán en sus compañeros de aventura.', '9780861274956', 34.10,'A006');
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L007','Harry Potter:Las Reliquias de la Muerte ','Harry, Ron y Hermione se marchan de Hogwarts para iniciar su misión más importante: tienen que destruir los horrocruxes, el secreto del poder y la inmortalidad de Voldemort, en los que el temido mago oscuro guarda los fragmentos de su alma.', '9780862542731', 93.00,'A007');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L006','Harry Potter', 'El día de su cumpleaños, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Debe asistir a una famosa escuela de magia y hechicería, donde entabla una amistad con dos jóvenes que se convertirán en sus compañeros de aventura.', '9780861274956', 34.10,'L006.png',22,'A006');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L007','Harry Potter:Las Reliquias de la Muerte ','Harry, Ron y Hermione se marchan de Hogwarts para iniciar su misión más importante: tienen que destruir los horrocruxes, el secreto del poder y la inmortalidad de Voldemort, en los que el temido mago oscuro guarda los fragmentos de su alma.', '9780862542731', 93.00,'L007.png',30,'A007');
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L008','Orgullo y Prejuicio','Se trata de una novela de desarrollo personal, una comedia romántica que esconde muchas reflexiones y refleja a la perfección la sociedad inglesa aristócrata rural de la época.', '9780861452638', 48.40 ,'A008');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L008','Orgullo y Prejuicio','Se trata de una novela de desarrollo personal, una comedia romántica que esconde muchas reflexiones y refleja a la perfección la sociedad inglesa aristócrata rural de la época.', '9780861452638', 48.40 ,'L008.png',12,'A008');
 
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L009','Romeo y Julienta',' Romeo y Julieta es una historia de amor entre dos jóvenes de 16 años. Son de familias enemigas en la ciudad de Verona. Pertenecen a las familias de los Capuletos y los Montescos, que son las más poderosas de la ciudad pero están enfrentadas entre sí. ', '9780867586849', 32.20, 'A009');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L009','Romeo y Julienta',' Romeo y Julieta es una historia de amor entre dos jóvenes de 16 años. Son de familias enemigas en la ciudad de Verona. Pertenecen a las familias de los Capuletos y los Montescos, que son las más poderosas de la ciudad pero están enfrentadas entre sí. ', '9780867586849', 32.20,'L009.png', 22,'A009');
 
-insert into libro(codLibro,nombre,resumen,ISBN,precio,codAutor) values ('L010','Navidad en las Montañas','Navidad en las montañas narra la historia de un capitán que, luego de perderse en las montañas, siente nostalgia por su infancia en la provincia y por su vida en la ciudad; sin embargo, su criado conoce a un cura, quien les ofrece hospedaje en el pueblo donde vive.', '9780864253657', 83.30, 'A010');
+insert into libro(codLibro,nombre,resumen,ISBN,precio,img,stock,codAutor) values ('L010','Navidad en las Montañas','Navidad en las montañas narra la historia de un capitán que, luego de perderse en las montañas, siente nostalgia por su infancia en la provincia y por su vida en la ciudad; sin embargo, su criado conoce a un cura, quien les ofrece hospedaje en el pueblo donde vive.', '9780864253657', 83.30,'L010.png', 24,'A010');
 
 Insert into cliente(cuenta,contraseña,apellidos,nombres,direccion,localidad,cpostal,telefono,correo) values ('75207852','2018200', 'Adrianzen Espinoza', ' Jordan ', ' Av.Alfredo Mendiola 3567 ', ' San Martin de Porres ', '00051', '985067200', 'jordanadriazen@gmail.com');
 Insert into cliente(cuenta,contraseña,apellidos,nombres,direccion,localidad,cpostal,telefono,correo) values ('61367852','20015', ' Laguna Delgado', ' Jazmin ', ' Av.Carlos Izaguirre 3567 ', ' Los olivos ', '00051', '999504392', 'jazminlaguna@gmail.com');
@@ -107,13 +108,12 @@ Insert into tarjeta(tipotarjeta,nrotarjeta,fechalimite,codigo,cuenta) values ('V
 Insert into tarjeta(tipotarjeta,nrotarjeta,fechalimite,codigo,cuenta) values ('MasterCard','4175024834743432', '07/23', '456','73010233');
 Insert into tarjeta(tipotarjeta,nrotarjeta,fechalimite,codigo,cuenta) values ('Visa','3456045847539434', '01/25', '999','72070443');
 Insert into tarjeta(tipotarjeta,nrotarjeta,fechalimite,codigo,cuenta) values ('Visa','6744232444773943', '01/27', '463', '79310243');
-
 --procedure
 use libreria;
 DELIMITER @@
 DROP PROCEDURE IF EXISTS SPlibro@@
-CREATE PROCEDURE SPlibro (NOM  varchar(50),RES varchar(500),ISBN varchar(13),
-IN PRE DECIMAL,noma VARCHAR(50),naci varchar(20) )
+CREATE PROCEDURE SPlibro (NOM  varchar(50),RES varchar(500),img varchar(50),ISBN varchar(13),
+IN PRE DECIMAL,stock int,noma VARCHAR(50),naci varchar(20) )
 BEGIN
 
 declare codl varchar(10);
@@ -127,11 +127,11 @@ select count(*) into noa  from autor where nombreAutor=noma;
 select CONCAT('A',lpad(ifnull(substr(max(CodAutor),-3),0),3,'0')) into cod from autor;
 if noa<>0 then
 
-insert into libro values(codl,NOM,RES,ISBN,PRE,cod);
+insert into libro values(codl,NOM,RES,ISBN,PRE,img,stock,cod);
 
 else 
 insert into autor values(coda,noma,naci);
-insert into libro values(codl,NOM,RES,ISBN,PRE,coda);
+insert into libro values(codl,NOM,RES,ISBN,PRE,img,stock,coda);
 
 end if;
 END@@

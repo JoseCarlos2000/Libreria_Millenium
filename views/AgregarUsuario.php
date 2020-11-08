@@ -46,7 +46,7 @@
     <div class="send-button">
 	    <input  type="submit" value="Registrar" />
 	  </div>
-	    <p>Ya tienes una cuenta?  <a href="#">Login</a></p>				
+	    <p>Ya tienes una cuenta?  <a href="index.php?c=cliente&a=Login">Login</a></p>				
 			</form>
 		</div>
 </div>

@@ -12,7 +12,7 @@ class libroModel {
                 
                          public function get_libros()
 		{
-			$sql = "select l.codLibro,l.nombre,l.resumen,l.precio,l.ISBN,a.nombreAutor from libro l,autor a
+			$sql = "select l.codLibro,l.nombre,l.resumen,l.precio,l.ISBN,l.img,a.nombreAutor,a.nacionalidad from libro l,autor a
                         where l.CodAutor=a.CodAutor";
 			$resultado = $this->db->query($sql);
 			while($row = $resultado->fetch_assoc())
@@ -34,7 +34,8 @@ class libroModel {
 			
 		}
                         public function BuscarLibroxID($cod){
-		        $sql = "select * from libro where  trim(codLibro)='$cod'";
+		        $sql = "select l.codLibro,a.CodAutor,l.nombre,l.stock,l.resumen,l.precio,l.ISBN,l.img,a.nombreAutor,a.nacionalidad from libro l,autor a
+                        where l.CodAutor=a.CodAutor and trim(codLibro)='$cod'";
 			$resultado = $this->db->query($sql);
 			while($row = $resultado->fetch_assoc())
 			{
@@ -43,9 +44,9 @@ class libroModel {
 			return $this->libro;
 			
 		}
-                 public function agregalibro($nombre, $resumen, $ISBN, $precio, $nombreAutor,$nacionalidad){
+                 public function agregalibro($nombre, $resumen, $ISBN, $precio,$img, $nombreAutor,$nacionalidad){
 			
-			$resultado = $this->db->query("call SPlibro('$nombre', '$resumen', '$ISBN', '$precio', '$nombreAutor','$nacionalidad')");
+			$resultado = $this->db->query("call SPlibro('$nombre', '$resumen','$img' ,'$ISBN', '$precio', '$nombreAutor','$nacionalidad')");
 			
 		}
                  public function ActualizaLibro($codL, $nomL, $resu,$ISBN, $pre, $CodAutor){

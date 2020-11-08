@@ -35,7 +35,7 @@
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
-	<div class="span6">Welcome!<strong> User</strong></div>
+	<div class="span6">Bienvenido!<strong> User</strong></div>
 	<div class="span6">
 	</div>
 </div>
@@ -47,7 +47,7 @@
 	<span class="icon-bar"></span>
 </a>
   <div class="navbar-inner">
-    <a class="brand" href="href=index.php?c=libro&a=MPrincipal"><img src="css/MenuPrincipal/themes/images/logolib.png" width="193px" height="80px"/></a>
+    <a class="brand" href="index.php?c=libro&a=MPrincipal"><img src="css/MenuPrincipal/themes/images/logolib.png" width="193px" height="80px"/></a>
 
 
   </div>
@@ -59,25 +59,35 @@
 	<div class="container">
 	<div class="row">
 <!-- Sidebar ================================================== -->	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart" href="product_summary.html"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> 22 Productos en Carrito</a></div>
+		<div class="well well-small"><a id="myCart"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> 22 Productos en Carrito</a></div>
 		<ul id="sideManu" class="nav nav-tabs nav-stacked">
-			<li class="subMenu open"><a>Mantenimientos</a>
+                        <li class="subMenu"><a>Libro</a>
 				<ul>
-				<li><a class="active" href="index.php?c=cliente&a=buscarusuario"><i class="icon-chevron-right"></i>Usuario </a></li>
-				<li><a href="##"><i class="icon-chevron-right"></i>Libro</a></li>
+				
+                                <li><a href="index.php?c=libro&a=BuscarLibro"><i class="icon-chevron-right"></i>Buscar</a></li>
+                                <li><a href="index.php?c=libro&a=NuevoLibro" class="active" href=""><i class="icon-chevron-right"></i>Registrar </a></li>
 				
 				
 				</ul>
 			</li>
+                         <li class="subMenu open"><a>Usuario</a>
+                             
+				<ul>
+				
+                                    <li><a href="index.php?c=cliente&a=buscarusuario"><i class="icon-chevron-right"></i>Buscar</a></li>
+                                    <li><a href="index.php?c=cliente&a=nuevousuarioxAdmin"><i class="icon-chevron-right"></i>Registrar</a></li>
+				
+				</ul>
+			</li>
 			<li class="subMenu"><a> Reportes </a>
-			<ul style="display:none">
-				<li><a href="index.php?c=cliente&a=buscarusuario"><i class="icon-chevron-right"></i>Usuario</a></li>
-				<li><a href="##"><i class="icon-chevron-right"></i>Libro</a></li>												
+				<ul style="display:none">
+				<li><a href="index.php?c=cliente&a=ReportesdeUsuarios"><i class="icon-chevron-right"></i>Usuario</a></li>
+				<li><a href="index.php?c=libro&a=ReportesLibros"><i class="icon-chevron-right"></i>Libro</a></li>												
 												
 				
 			</li>
                         </ul>
-			<li><a href="href=index.php?c=cliente&a=Principal">Salir</a></li>
+			<li><a href="index.php?c=cliente&a=Principal">Salir</a></li>
 			
 		
 		<br/>
@@ -115,7 +125,7 @@
 		 <div class="control-group">
 			<label class="control-label" for="inputLnam">Resumen<sup>*</sup></label>
 			<div class="controls">
-                            <input type="text" id="resumen" name="resumen" value="<?=$dato["resumen"]?>">
+                            <textarea type="text" id="resumen" name="resumen" rows="10" cols="50"><?=$dato["resumen"]?></textarea>                           
 			</div>
 		 </div>
                 <div class="control-group">
@@ -178,16 +188,7 @@
 <!-- Footer ================================================================== -->
 	<div  id="footerSection">
 	<div class="container">
-		<div class="row">
-		
-			<div id="socialMedia" class="span3 pull-right">
-				<h5>SOCIAL MEDIA </h5>
-				<a href="#"><img width="60" height="60" src="css/MenuPrincipal/themes/images/facebook.png" title="facebook" alt="facebook"/></a>
-				<a href="#"><img width="60" height="60" src="css/MenuPrincipal/themes/images/twitter.png" title="twitter" alt="twitter"/></a>
-				<a href="#"><img width="60" height="60" src="css/MenuPrincipal/themes/images/youtube.png" title="youtube" alt="youtube"/></a>
-			 </div> 
-		 </div>
-		<p class="pull-right">&copy; Bootshop</p>
+<center><h5><br>Millenium By UCSS 2020</h5></center>
 	</div><!-- Container End -->
 	</div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
@@ -204,6 +205,5 @@
 <script src="css/MenuPrincipal/themes/switch/theamswitcher.js" type="text/javascript" charset="utf-8"></script>
 
 </div>
-<span id="themesBtn"></span>
 </body>
 </html>
