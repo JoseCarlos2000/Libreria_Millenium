@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-      
+   <link rel="icon" href="assets/Books_icon-icons.com_76879.ico">   
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,7 +13,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
         integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
-
+    
     <!-- Font Awesome CDN -->
     <script src="https://kit.fontawesome.com/23412c6a8d.js"></script>
 

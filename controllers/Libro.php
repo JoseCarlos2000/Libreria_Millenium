@@ -54,6 +54,7 @@ class LibroController {
 			$resumen = $_POST['resumen'];
 			$ISBN = $_POST['ISBN'];
 			$precio = $_POST['precio'];
+                        $stock=$_POST['stock'];
                         $nombreAutor = $_POST['nombreAutor'];
                         $nacimiento=$_POST['nacionalidad'];
                         $libro = new libroModel();         
@@ -63,7 +64,7 @@ class LibroController {
                         $destino="css/images/libros/".$foto;
                         copy($ruta, $destino);
  
-			$libro->agregalibro($nombre, $resumen,$ISBN, $precio,$foto, $nombreAutor, $nacimiento);
+			$libro->agregalibro($nombre, $resumen,$ISBN, $precio,$foto,$stock, $nombreAutor, $nacimiento);
 			require_once "views/libro/BuscarLibro.php";
                         
 		}
@@ -76,7 +77,8 @@ class LibroController {
 
                 public function CarritoLibro()
                 {
-                    $valida=true;   
+                    $valida=true;
+                    $validanum=true;
                     session_start(); 
                     $libro=new libroModel();
 
@@ -90,9 +92,16 @@ class LibroController {
                     if($cantidad>$stock){
                     //Valida Stock 
                     $valida=false;$data["validastock"]=$valida;
+                    $validanum=true;$data["validanega"]=$validanum;
+                    }
+                    elseif($cantidad<0)
+                    {
+                        $validanum=false;$data["validanega"]=$validanum;
+                        $valida=true;$data["validastock"]=$valida;
                     }
                     else{
                      //Validar Stock   
+                    $validanum=true;$data["validanega"]=$validanum;
                     $valida=true;$data["validastock"]=$valida;
                     //Carrito
                     if(isset($_SESSION["carrito"]))
@@ -108,7 +117,8 @@ class LibroController {
                    
                 }
                 public function anulaCarrito($indice)
-                {   $valida=true; 
+                {   
+                    $validanum=true;$data["validanega"]=$validanum;
                     $valida=true;$data["validastock"]=$valida;
                     session_start();
                     $car=$_SESSION["carrito"];

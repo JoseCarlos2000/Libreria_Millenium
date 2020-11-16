@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootshop online Shopping cart</title>
+    <title>Libreria Millenium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -13,7 +13,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/templatemo-style.css" rel="stylesheet">
-	
+	<link rel="icon" href="assets/Books_icon-icons.com_76879.ico">
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="css/MenuPrincipal/themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="css/MenuPrincipal/themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -121,7 +121,7 @@ else
             <h3> Busqueda de Libro</h3>
             <tr><center><td>Nombre del Libro<td><input  type="text" id="nom" name="nom">
                 <br><button type="submit" name="btnBusc" class="btn btn-info">Buscar</button>
-                <td> <a class="btn btn-info" href="index.php?c=libro&a=NuevoLibro">Agregar</a>
+                
         
                     </div>
             

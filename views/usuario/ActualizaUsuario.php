@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootshop online Shopping cart</title>
+    <title>Libreria Millenium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -13,7 +13,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/templatemo-style.css" rel="stylesheet">
-	
+	<link rel="icon" href="assets/Books_icon-icons.com_76879.ico">
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="css/MenuPrincipal/themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="css/MenuPrincipal/themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -31,7 +31,17 @@
 	
   </head>
 <body>
-
+   <?php
+session_start();
+if(isset($_SESSION["carrito"]))
+{
+    $carrito=$_SESSION["carrito"];
+}
+else
+{
+    $carrito=array();
+}
+?> 
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
@@ -59,7 +69,7 @@
 	<div class="container">
 	<div class="row">
 <!-- Sidebar ================================================== -->	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> 22 Productos en Carrito</a></div>
+		<div class="well well-small"><a id="myCart"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> <?=count($carrito)?> Productos en Carrito</a></div>
 		<ul id="sideManu" class="nav nav-tabs nav-stacked">
                    <li class="subMenu"><a>Libro</a>
 				<ul>
@@ -173,7 +183,8 @@
                 <div><br></div>
 	<div class="alert alert-block alert-error fade in">
 		<button type="button" class="close" data-dismiss="alert">×</button>
-		<strong>PetroMark</strong> es simplemente una filial de PetroPeru ubicado en diferentes punto del Pais , ofreciendo un buen servicio a sus clientes y proveedores
+		<strong>Millenium S.A.C</strong> Elige y compra los mejores libros del mercado en nuestra tienda virtual. Nos ubicamos en la AV. PERÚ 3124 en San Martin de Porres. !AHORA O NUNCA!  
+	
 	 </div>	
 	
 	<div class="control-group">

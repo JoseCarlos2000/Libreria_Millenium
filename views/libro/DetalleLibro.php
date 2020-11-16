@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Petro Market</title>
+    <title>Libreria Millenium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -23,7 +23,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="css/MenuPrincipal/themes/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="css/MenuPrincipal/themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="css/MenuPrincipal/themes/images/ico/apple-touch-icon-57-precomposed.png">
-
+    <link rel="icon" href="assets/Books_icon-icons.com_76879.ico">
 	<style type="text/css" id="enject"></style>
   </head>
 <body>
@@ -109,7 +109,8 @@ else
              
                             <td>Ingrese Cantidad:<input name="cantidad" id="cantidad" type="number" class="span1" required>
                                <!-- <a  class="btn btn-large btn-primary pull-right">Añadir a Carrito<i class=" icon-shopping-cart"></i></a> -->
-                                <button href="##" onclick="validastock()" class="btn btn-primary" type="submit" ><i class="icon-shopping-cart icon-white"></i> Añadir a Carrito </button>
+                                
+                                <button  class="btn btn-primary" type="submit" ><i class="icon-shopping-cart icon-white"></i> Añadir a Carrito </button>
                         </div>
                     </div>
                 
@@ -128,17 +129,7 @@ else
 
 	</div>
 
-<script>
-function validastock(){    
-            cantidad=Number(carrito.cantidad.value);
-            canticar=<?=$dato["stock"]?>;
-            if(cantidad>canticar){
-                //alert("stock no disponible");
-                 return;
-           }
-             carrito.submit(); 
-}
-</script>
+
   <?php
   
  }

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootshop online Shopping cart</title>
+    <title>Libreria Millenium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -13,6 +13,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/templatemo-style.css" rel="stylesheet">
+        <link rel="icon" href="assets/Books_icon-icons.com_76879.ico">
 	
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="css/MenuPrincipal/themes/bootshop/bootstrap.min.css" media="screen"/>
@@ -31,11 +32,21 @@
 	
   </head>
 <body>
-
+   <?php
+session_start();
+if(isset($_SESSION["carrito"]))
+{
+    $carrito=$_SESSION["carrito"];
+}
+else
+{
+    $carrito=array();
+}
+?> 
 <div id="header">
 <div class="container">
 <div id="welcomeLine" class="row">
-	<div class="span6">Bienvenido!<strong> User</strong></div>
+	<div class="span6">Bienvenido!<strong> Usuario</strong></div>
 	<div class="span6">
 	</div>
 </div>
@@ -59,7 +70,7 @@
 	<div class="container">
 	<div class="row">
 <!-- Sidebar ================================================== -->	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"> 22 Productos en Carrito</a></div>
+		<div class="well well-small"><a id="myCart"><img src="css/MenuPrincipal/themes/images/ico-cart.png" alt="cart"><?=count($carrito)?> Productos en Carrito</a></div>
 		<ul id="sideManu" class="nav nav-tabs nav-stacked">
                         <li class="subMenu"><a>Libro</a>
 				<ul>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Petro Market</title>
+    <title>Libreria Millenium</title>
     
     <meta name="description" content="">
     <meta name="author" content="">
@@ -14,7 +14,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/templatemo-style.css" rel="stylesheet">
-	
+	<link rel="icon" href="assets/Books_icon-icons.com_76879.ico">
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="css/MenuPrincipal/themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="css/MenuPrincipal/themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -43,7 +43,11 @@
    <?php
 if($data["validastock"]!=true){   
 include_once 'plantillas/jserrorStock.php';}else{}   
-   
+if($data["validanega"]!=true)
+{
+    include_once 'plantillas/jsvalornega.php';   
+}
+else{}
 if(isset($_SESSION["carrito"]))
 {
     $carrito=$_SESSION["carrito"];

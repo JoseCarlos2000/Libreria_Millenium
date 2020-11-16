@@ -1,3 +1,4 @@
+drop database libreria;
 create database libreria;
 use libreria;
 
@@ -37,9 +38,9 @@ codLibro varchar(10) primary key,
 nombre varchar(50),
 resumen varchar(500),
 ISBN  varchar(13),
-precio decimal,
+precio decimal(10,2),
 img varchar(50),
-stock  int,
+stock  int(11),
 CodAutor varchar(10)
 );
  
@@ -113,18 +114,17 @@ use libreria;
 DELIMITER @@
 DROP PROCEDURE IF EXISTS SPlibro@@
 CREATE PROCEDURE SPlibro (NOM  varchar(50),RES varchar(500),img varchar(50),ISBN varchar(13),
-IN PRE DECIMAL,stock int,noma VARCHAR(50),naci varchar(20) )
+IN PRE DECIMAL(10,2),stock int(11),noma VARCHAR(50),naci varchar(20) )
 BEGIN
 
 declare codl varchar(10);
 declare coda varchar(10);
 declare noa int;
-declare h char(10);
 declare cod varchar(10);
 select  CONCAT('L',lpad(ifnull(substr(max(codLibro),-3),0) + 1,3,'0')) into codl from libro ; 
 select CONCAT('A',lpad(ifnull(substr(max(CodAutor),-3),0) + 1,3,'0')) into coda from autor;
 select count(*) into noa  from autor where nombreAutor=noma;
-select CONCAT('A',lpad(ifnull(substr(max(CodAutor),-3),0),3,'0')) into cod from autor;
+select CodAutor into cod from autor where nombreAutor=noma;
 if noa<>0 then
 
 insert into libro values(codl,NOM,RES,ISBN,PRE,img,stock,cod);

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootshop online Shopping cart</title>
+    <title>Libreria Millenium</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -13,7 +13,7 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/templatemo-style.css" rel="stylesheet">
-	
+	<link rel="icon" href="assets/Books_icon-icons.com_76879.ico">
 <!-- Bootstrap style --> 
     <link id="callCss" rel="stylesheet" href="css/MenuPrincipal/themes/bootshop/bootstrap.min.css" media="screen"/>
     <link href="css/MenuPrincipal/themes/css/base.css" rel="stylesheet" media="screen"/>
@@ -144,6 +144,13 @@ else
 		<div class="controls">
                     <input type="text" id="precio" name="precio" placeholder="precio">
 			</div>
+                
+	  </div>
+                <div class="control-group">
+		<label class="control-label" for="input_email">Stock<sup>*</sup></label>
+		<div class="controls">
+                    <input type="text" id="stock"  name="stock" placeholder="stock">
+		</div>
 	  </div>
 		<div class="control-group">
 		<label class="control-label" for="input_email">Nombre Autor<sup>*</sup></label>

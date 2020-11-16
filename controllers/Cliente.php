@@ -85,7 +85,7 @@ class ClienteController {
 		}
                 public function guardarclientexAdmin()
                 {
-                    			$cuenta = $_POST['cuenta'];
+                    	$cuenta = $_POST['cuenta'];
 			$pas = $_POST['contraseña'];
 			$ape = $_POST['apellidos'];
 			$nom = $_POST['nombres'];
@@ -104,8 +104,7 @@ class ClienteController {
 			$this->buscarusuario();
                 }
                     public function validausuario(){
-			
-			
+
 			$cliente = new clienteModel();
                         $libro=new libroModel();
 			$cuenta=$_POST['cuenta'];

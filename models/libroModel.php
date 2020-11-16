@@ -44,9 +44,9 @@ class libroModel {
 			return $this->libro;
 			
 		}
-                 public function agregalibro($nombre, $resumen, $ISBN, $precio,$img, $nombreAutor,$nacionalidad){
+                 public function agregalibro($nombre, $resumen, $ISBN, $precio,$img,$stock, $nombreAutor,$nacionalidad){
 			
-			$resultado = $this->db->query("call SPlibro('$nombre', '$resumen','$img' ,'$ISBN', '$precio', '$nombreAutor','$nacionalidad')");
+			$resultado = $this->db->query("call SPlibro('$nombre', '$resumen','$img' ,'$ISBN', '$precio','$stock', '$nombreAutor','$nacionalidad')");
 			
 		}
                  public function ActualizaLibro($codL, $nomL, $resu,$ISBN, $pre, $CodAutor){
