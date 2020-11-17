@@ -24,6 +24,9 @@
 		$controlador = cargarControlador(CONTROLADOR_PRINCIPAL);
 		$accionTmp = ACCION_PRINCIPAL;
 		$controlador->$accionTmp();
-                //Jose Carlos Huanatico Lipa
+                //Prueba de Integración con Jenkins 1.0
+                //Desarrollador e Integrador: Jose Carlos Huanatico Lipa
+                //Curso de Ingeniería de Software II
+                //2020 II
 	}
 ?>
