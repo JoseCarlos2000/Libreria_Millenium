@@ -24,5 +24,6 @@
 		$controlador = cargarControlador(CONTROLADOR_PRINCIPAL);
 		$accionTmp = ACCION_PRINCIPAL;
 		$controlador->$accionTmp();
+                //Hola mundo
 	}
 ?>
