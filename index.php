@@ -24,6 +24,6 @@
 		$controlador = cargarControlador(CONTROLADOR_PRINCIPAL);
 		$accionTmp = ACCION_PRINCIPAL;
 		$controlador->$accionTmp();
-                //Huaman se la come
+                //Jose Carlos Huanatico Lipa
 	}
 ?>
