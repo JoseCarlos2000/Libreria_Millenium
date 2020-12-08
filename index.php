@@ -28,6 +28,7 @@
                 //Prueba de Gestion de Versiones con Git
                 //Probador de versiones : Jose Carlos Huanatico Lipa
                 //Fecha 8/12/2020
+                //Version del netbeans 8.2
                 //Desarrollador e Integrador: Jose Carlos Huanatico Lipa
                 //Curso de Ingeniería de Software II
                 //2020 II
