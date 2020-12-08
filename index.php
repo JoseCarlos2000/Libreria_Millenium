@@ -26,6 +26,7 @@
 		$controlador->$accionTmp();
                 //Prueba de Integración con Jenkins 1.0
                 //Prueba de Gestion de Versiones con Git
+                //Probador de versiones : Jose Carlos Huanatico Lipa
                 //Desarrollador e Integrador: Jose Carlos Huanatico Lipa
                 //Curso de Ingeniería de Software II
                 //2020 II
