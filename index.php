@@ -27,6 +27,7 @@
                 //Prueba de Integración con Jenkins 1.0
                 //Prueba de Gestion de Versiones con Git
                 //Probador de versiones : Jose Carlos Huanatico Lipa
+                //Especialidad:Ingeniería de Sistemas
                 //Fecha 8/12/2020
                 //Version del netbeans 8.2
                 //Desarrollador e Integrador: Jose Carlos Huanatico Lipa
